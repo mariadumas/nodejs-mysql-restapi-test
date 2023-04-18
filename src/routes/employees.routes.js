@@ -1,0 +1,25 @@
+import { Router } from "express";
+
+import { getEmployees, createEmployee, updateEmployee, deleteEmployee, getEmployee } from "../controllers/employees.controller.js";
+
+const router = Router();
+
+
+
+
+
+router.get("/employees", getEmployees);
+
+router.get("/employees/:id", getEmployee);
+
+
+router.post("/employees", createEmployee);
+
+//para actualizar solo algunos datos, para actualizr todo usar put
+router.patch("/employees/:id", updateEmployee);
+
+router.delete("/employees/:id", deleteEmployee);
+
+
+
+export default router
